@@ -1,13 +1,13 @@
 # BrandMe
 
-Brandme is a brand identity generator. With a few click it creates your brand.
+Brandme is a brand identity generator. With a few clicks it creates your brand.
 
 Brandme can produce the following:
-    - Logos
-    - Business cards
-    - Fylers
-    - Broschures
-    - Menus
+- Logos
+- Business cards
+- Fylers
+- Broschures
+- Menus
 
 More stuff will be added.
 ### Needed libs
