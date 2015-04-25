@@ -5,10 +5,11 @@ from lxml import etree
 
 
 class LogoTemplate:
+
     def __init__(self, source, m_primitive, m_symbol, m_text, m_palette):
         self.primitive = m_primitive
         self.symbol = m_symbol
-        self.palette = m_palette
+        self.palette = m_palette1
         self.text = m_text
         self.svgXml = ""
         self.font = 0
@@ -79,6 +80,7 @@ class LogoTemplate:
 
 
 class ShapeText:
+
     def __init__(self, source):
         self.xCordinate = 0
         self.anchorPosition = 400
@@ -91,7 +93,7 @@ class ShapeText:
         self.textSpacing = 0
         self.fontSize = 100
         self.color = "#FFFFFF"
-        self.secondaryColor ="#FFFFFF"
+        self.secondaryColor = "#FFFFFF"
         self.mask = 0
         self.anchor = "middle"
         self.__getShapeFromFile(source)
@@ -116,25 +118,25 @@ class ShapeText:
             element.set("font-size", str(self.fontSize))
             element.set("text-anchor", str(self.anchor))
             element.set("fill", self.color)
-            
 
-            if self.textSpacing != 0 and self.textSpacing != None:
+            if self.textSpacing is not 0 and self.textSpacing is not None:
                 element.set("letter-spacing", str(self.textSpacing))
 
             element.set("x", self.anchorPosition)
 
-            if self.secondaryText != 0 and self.secondaryText != None:
+            if self.secondaryText != 0 and self.secondaryText is not None:
                 words = self.text
                 words = words.split()
                 if len(words) > 1:
                     self.text = words[0]
                     stuff = etree.SubElement(element, "tspan")
                     stuff.set("fill", str(self.secondaryColor))
-                    stuff.text = " "+words[1]
+                    stuff.text = " " + words[1]
             element.text = self.text
 
 
 class ShapePrimitive:
+
     def __init__(self, source):
         self.xCordinate = 0
         self.yCordinate = 0
@@ -162,7 +164,9 @@ class ShapePrimitive:
             element.set("height", str(self.height))
             element.set("fill", self.color)
 
+
 class ShapeSymbol:
+
     def __init__(self, source):
         self.xCordinate = 0
         self.yCordinate = 0
@@ -192,7 +196,8 @@ class ShapeSymbol:
 
 
 class ColorPalette:
-    def __init__(self, source = None):
+
+    def __init__(self, source=None):
         self.main = "#FFFFFF"
         self.secondary = "#FFFFFF"
         self.outline = "#FFFFFF"
@@ -200,7 +205,6 @@ class ColorPalette:
         self.textSecondary = "#FFFFFF"
         if source is not None:
             self.getPaletteFromFile(source)
-
 
     def getPaletteFromFile(self, source):
         file = open(source, "r")
@@ -225,12 +229,12 @@ class ColorPalette:
 
 
 class FileFinder:
+
     def __init__(self, m_folder, m_filetype):
         self.folder = m_folder
         self.filetype = m_filetype
         self.files = []
         self.__findAllFilesFromFolder(self.folder)
-
 
     def __findAllFilesFromFolder(self, folder):
         for root, dirs, files in os.walk(folder):
