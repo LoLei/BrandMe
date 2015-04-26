@@ -9,7 +9,7 @@ class LogoTemplate:
     def __init__(self, source, m_primitive, m_symbol, m_text, m_palette):
         self.primitive = m_primitive
         self.symbol = m_symbol
-        self.palette = m_palette1
+        self.palette = m_palette
         self.text = m_text
         self.svgXml = ""
         self.font = 0
