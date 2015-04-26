@@ -1,0 +1,44 @@
+This document will be used as a guide for convertings fonts in base64.
+
+
+Step 01:
+Goto: http://www.fontsquirrel.com/tools/webfont-generator
+
+Step 02:
+Upload a font from "Fonts to convert"
+
+Step 03:
+
+Select Expert mode
+
+Step 04:
+
+Tick the "Base64 encode" at the CSS section
+
+Step 05:
+
+Tick  "Yes, the fonts I'm uploading are legally eligible for web embedding."
+
+Step 06:
+
+Finally download the zip file
+
+Step 07:
+
+Delete everything except the CSS file.
+
+Step 08:
+
+Open the CSS File
+
+Step 09:
+
+Edit the file and compare it with the sample.xml
+copy the extra tags from sample.xml and also remove extra tags from the css file.
+rename the font-family in the "text tag" at the style attribute with the font name defined at the style tag.
+Step 10
+If everything thing is ok, save it as a XML file and add it to the fonts folder.
+Step 11
+Remove excess created files and also remove font from the TODO folder.
+
+
