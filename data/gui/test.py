@@ -9,6 +9,16 @@ class MyForm(QtGui.QMainWindow):
         QtGui.QWidget.__init__(self, parent)
         self.ui = Ui_Dialog()
         self.ui.setupUi(self)
+        QtCore.QObject.connect(self.ui.pushButton,QtCore.SIGNAL("clicked()"), self.setName)
+
+    def setName(self):
+        a = self.ui.lineEdit.text
+        scene = QtGui.QGraphicsView()
+        scene.addPixmap(QPixmap('logo.svg'))
+        self.ui.graphicsView.setScene(scene)
+        self.ui.graphicsView.show()
+        print(a)
+
 
 
 if __name__ == "__main__":
