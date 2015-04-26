@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'basic.ui'
 #
-# Created: Sun Apr 26 17:02:23 2015
+# Created: Sun Apr 26 22:42:01 2015
 #      by: PyQt4 UI code generator 4.11.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -46,3 +46,4 @@ class Ui_Dialog(object):
         Dialog.setWindowTitle(_translate("Dialog", "BrandMe", None))
         self.pushButton.setText(_translate("Dialog", "Create", None))
         self.lineEdit.setText(_translate("Dialog", "Enter company name", None))
+
