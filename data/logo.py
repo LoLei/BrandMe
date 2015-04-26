@@ -39,8 +39,8 @@ class LogoTemplate:
                 self.svgXml += etree.tostring(temp).decode(encoding="UTF-8")
             if line[0:10] == "<primitive":
                 temp = etree.fromstring(line)
-                self.primitive.xCordinate = temp.get("x")
-                self.primitive.yCordinate = temp.get("y")
+                self.primitive.xCoordinate = temp.get("x")
+                self.primitive.yCoordinate = temp.get("y")
                 self.primitive.width = temp.get("width")
                 self.primitive.height = temp.get("height")
                 self.primitive.color = self.__setColorByType(temp.get("type"))
@@ -48,8 +48,8 @@ class LogoTemplate:
                 self.svgXml += etree.tostring(self.primitive.svgXml).decode(encoding="UTF-8")
             elif line[0:7] == "<symbol":
                 temp = etree.fromstring(line)
-                self.symbol.xCordinate = temp.get("x")
-                self.symbol.yCordinate = temp.get("y")
+                self.symbol.xCoordinate = temp.get("x")
+                self.symbol.yCoordinate = temp.get("y")
                 self.symbol.width = temp.get("width")
                 self.symbol.height = temp.get("height")
                 self.symbol.color = self.__setColorByType(temp.get("type"))
@@ -59,8 +59,8 @@ class LogoTemplate:
                 temp = etree.fromstring(line)
                 self.text.secondaryText = temp.get("secondary-color-text")
                 self.text.anchorPosition = temp.get("text-anchor-position")
-                self.text.xCordinate = temp.get("x")
-                self.text.yCordinate = temp.get("y")
+                self.text.xCoordinate = temp.get("x")
+                self.text.yCoordinate = temp.get("y")
                 self.text.width = temp.get("width")
                 self.text.height = temp.get("height")
                 self.text.anchor = temp.get("text-anchor")
@@ -82,9 +82,9 @@ class LogoTemplate:
 class ShapeText:
 
     def __init__(self, source):
-        self.xCordinate = 0
+        self.xCoordinate = 0
         self.anchorPosition = 400
-        self.yCordinate = 0
+        self.yCoordinate = 0
         self.width = 1000
         self.height = 0
         self.text = ""
@@ -109,8 +109,8 @@ class ShapeText:
 
     def setShapeAttributes(self):
         for element in self.svgXml.iter('svg'):
-            element.set("x", str(self.xCordinate))
-            element.set("y", str(self.yCordinate))
+            element.set("x", str(self.xCoordinate))
+            element.set("y", str(self.yCoordinate))
             element.set("width", str(self.width))
             element.set("height", str(self.height))
 
@@ -138,8 +138,8 @@ class ShapeText:
 class ShapePrimitive:
 
     def __init__(self, source):
-        self.xCordinate = 0
-        self.yCordinate = 0
+        self.xCoordinate = 0
+        self.yCoordinate = 0
         self.width = 1000
         self.height = 0
         self.svgXml = 0
@@ -158,8 +158,8 @@ class ShapePrimitive:
 
     def setShapeAttributes(self):
         for element in self.svgXml.iter('svg'):
-            element.set("x", str(self.xCordinate))
-            element.set("y", str(self.yCordinate))
+            element.set("x", str(self.xCoordinate))
+            element.set("y", str(self.yCoordinate))
             element.set("width", str(self.width))
             element.set("height", str(self.height))
             element.set("fill", self.color)
@@ -168,8 +168,8 @@ class ShapePrimitive:
 class ShapeSymbol:
 
     def __init__(self, source):
-        self.xCordinate = 0
-        self.yCordinate = 0
+        self.xCoordinate = 0
+        self.yCoordinate = 0
         self.width = 1000
         self.height = 0
         self.svgXml = 0
@@ -188,8 +188,8 @@ class ShapeSymbol:
 
     def setShapeAttributes(self):
         for element in self.svgXml.iter('svg'):
-            element.set("x", str(self.xCordinate))
-            element.set("y", str(self.yCordinate))
+            element.set("x", str(self.xCoordinate))
+            element.set("y", str(self.yCoordinate))
             element.set("width", str(self.width))
             element.set("height", str(self.height))
             element.set("fill", self.color)
