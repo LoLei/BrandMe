@@ -14,7 +14,7 @@ class MyForm(QtGui.QMainWindow):
     def setName(self):
         a = self.ui.lineEdit.text
         scene = QtGui.QGraphicsScene()
-        scene.addPixmap(QtGui.QPixmap('..\logo.svg'))
+        scene.addPixmap(QtGui.QPixmap('logo.svg'))
         self.ui.graphicsView.setScene(scene)
         self.ui.graphicsView.show()
         print(a)
