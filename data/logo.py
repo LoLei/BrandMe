@@ -124,7 +124,7 @@ class ShapeText:
 
             element.set("x", self.anchorPosition)
 
-            if self.secondaryText != 0 and self.secondaryText is not None:
+            if self.secondaryText is not 0 and self.secondaryText is not None:
                 words = self.text
                 words = words.split()
                 if len(words) > 1:
