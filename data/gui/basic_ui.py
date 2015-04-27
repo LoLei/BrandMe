@@ -30,7 +30,7 @@ class Ui_Dialog(object):
         self.pushButton = QtGui.QPushButton(Dialog)
         self.pushButton.setGeometry(QtCore.QRect(210, 20, 75, 23))
         self.pushButton.setObjectName(_fromUtf8("pushButton"))
-        self.graphicsView = QtGui.QGraphicsView(Dialog)
+        self.graphicsView = QtGui.QWebView(Dialog)
         self.graphicsView.setGeometry(QtCore.QRect(30, 60, 256, 192))
         self.graphicsView.setObjectName(_fromUtf8("graphicsView"))
         self.lineEdit = QtGui.QLineEdit(Dialog)
@@ -46,4 +46,3 @@ class Ui_Dialog(object):
         Dialog.setWindowTitle(_translate("Dialog", "BrandMe", None))
         self.pushButton.setText(_translate("Dialog", "Create", None))
         self.lineEdit.setText(_translate("Dialog", "Enter company name", None))
-
