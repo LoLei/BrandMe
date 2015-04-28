@@ -13,7 +13,7 @@ class MyForm(QtGui.QMainWindow):
         QtCore.QObject.connect(self.ui.pushButton, QtCore.SIGNAL("clicked()"), self.setName)
 
     def setName(self):
-        a = self.ui.lineEdit.text()
+        user_input = self.ui.lineEdit.text()
         dirColors = FileFinder("./palettes", "xml")
         dirShapes = FileFinder("./primitives", "svg")
         dirSymbols = FileFinder("./symbols", "svg")
@@ -25,9 +25,9 @@ class MyForm(QtGui.QMainWindow):
         symbol01 = ShapeSymbol(dirSymbols.getRandomFile())
         font01 = ShapeText(dirFonts.getRandomFile())
 
-        b = str(a)
+        logo_text = str(user_input)
 
-        font01.text = b
+        font01.text = logo_text
 
         logo = LogoTemplate(dirTemplates.getRandomFile(), shape01, symbol01, font01, colorPalette1)
         logo.writeFile("logo.svg")
