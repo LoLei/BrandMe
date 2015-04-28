@@ -246,18 +246,3 @@ class FileFinder:
         return random.sample(self.files, 1)[0]
 
 
-dirColors = FileFinder("./palettes", "xml")
-dirShapes = FileFinder("./primitives", "svg")
-dirSymbols = FileFinder("./symbols", "svg")
-dirTemplates = FileFinder("./templates", "xml")
-dirFonts = FileFinder("./fonts", "xml")
-
-colorPalette1 = ColorPalette(dirColors.getRandomFile())
-shape01 = ShapePrimitive(dirShapes.getRandomFile())
-symbol01 = ShapeSymbol(dirSymbols.getRandomFile())
-font01 = ShapeText(dirFonts.getRandomFile())
-
-font01.text = "BrandMe"
-
-logo = LogoTemplate(dirTemplates.getRandomFile(), shape01, symbol01, font01, colorPalette1)
-logo.writeFile("logo.svg")
