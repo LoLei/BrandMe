@@ -245,4 +245,11 @@ class FileFinder:
     def getRandomFile(self):
         return random.sample(self.files, 1)[0]
 
+class FolderFinder:
+    def __init__(self, m_folder):
+        self.folder = m_folder
+        self.folderNames = []
 
+    def getAllFolderNames(self):
+        self.folderNames.append(os.listdir(path=self.folder))
+        return self.folderNames

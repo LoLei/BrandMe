@@ -15,6 +15,9 @@ class MyForm(QtGui.QMainWindow):
     def setName(self):
         # TODO Get branch choice from GUI
         # Only items fitting to branch in corresponding directory
+        branches = FolderFinder("./branches").getAllFolderNames()
+        print(branches)
+
         branch = branch_choice
         palettes_string = "./branches/" + branch + "/palettes"
         primitives_string = "./branches/" + branch + "/primitives"
