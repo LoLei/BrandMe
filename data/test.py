@@ -13,12 +13,21 @@ class MyForm(QtGui.QMainWindow):
         QtCore.QObject.connect(self.ui.pushButton, QtCore.SIGNAL("clicked()"), self.setName)
 
     def setName(self):
+        # TODO Get branch choice from GUI
+        # Only items fitting to branch in corresponding directory
+        branch = branch_choice
+        palettes_string = "./branches/" + branch + "/palettes"
+        primitives_string = "./branches/" + branch + "/primitives"
+        symbols_string = "./branches/" + branch + "/symbols"
+        templates_string = "./branches/" + branch + "/templates"
+        fonts_string = "./branches/" + branch + "/fonts"
+
         user_input = self.ui.lineEdit.text()
-        dirColors = FileFinder("./palettes", "xml")
-        dirShapes = FileFinder("./primitives", "svg")
-        dirSymbols = FileFinder("./symbols", "svg")
-        dirTemplates = FileFinder("./templates", "xml")
-        dirFonts = FileFinder("./fonts", "xml")
+        dirColors = FileFinder(palettes_string, "xml")
+        dirShapes = FileFinder(primitives_string, "svg")
+        dirSymbols = FileFinder(symbols_string, "svg")
+        dirTemplates = FileFinder(templates_string, "xml")
+        dirFonts = FileFinder(fonts_string, "xml")
 
         colorPalette1 = ColorPalette(dirColors.getRandomFile())
         shape01 = ShapePrimitive(dirShapes.getRandomFile())

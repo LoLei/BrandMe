@@ -46,4 +46,6 @@ class Ui_Dialog(object):
         Dialog.setWindowTitle(_translate("Dialog", "BrandMe", None))
         self.pushButton.setText(_translate("Dialog", "Create", None))
         self.lineEdit.setText(_translate("Dialog", "Enter company name", None))
-
+        # Can be drop down menu or radio button etc.
+        # TODO Add actual GUI elements too
+        self.lineEdit.setText(_translate("Dialog", "Enter branch", None))
